@@ -100,6 +100,7 @@ class CandleStickChartViewController: DemoBaseViewController {
         set1.neutralColor = .blue
         
         let data = CandleChartData(dataSet: set1)
+        chartView.autoScaleMinMaxEnabled = true
         chartView.data = data
     }
     

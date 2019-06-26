@@ -93,9 +93,10 @@ class PieChartViewController: DemoBaseViewController {
         
         let pFormatter = NumberFormatter()
         pFormatter.numberStyle = .percent
-        pFormatter.maximumFractionDigits = 1
+        pFormatter.maximumFractionDigits = 2
+        pFormatter.minimumFractionDigits = 2
         pFormatter.multiplier = 1
-        pFormatter.percentSymbol = " %"
+        pFormatter.percentSymbol = "$%"
         data.setValueFormatter(DefaultValueFormatter(formatter: pFormatter))
         
         data.setValueFont(.systemFont(ofSize: 11, weight: .light))

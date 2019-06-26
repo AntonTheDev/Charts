@@ -15,7 +15,8 @@ internal func accessibilityPostScreenChangedNotification(withElement element: An
 /// A simple abstraction over UIAccessibilityElement and NSAccessibilityElement.
 open class NSUIAccessibilityElement: UIAccessibilityElement
 {
-    private let containerView: UIView
+
+    private weak var containerView: UIView?
 
     final var isHeader: Bool = false
     {
@@ -36,7 +37,7 @@ open class NSUIAccessibilityElement: UIAccessibilityElement
     override init(accessibilityContainer container: Any)
     {
         // We can force unwrap since all chart views are subclasses of UIView
-        containerView = container as! UIView
+        containerView = container as? UIView
         super.init(accessibilityContainer: container)
     }
 
@@ -49,6 +50,7 @@ open class NSUIAccessibilityElement: UIAccessibilityElement
 
         set
         {
+            guard let containerView = containerView else { return }
             super.accessibilityFrame = containerView.convert(newValue, to: UIScreen.main.coordinateSpace)
         }
     }

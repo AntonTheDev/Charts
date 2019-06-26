@@ -77,7 +77,7 @@ class PiePolylineChartViewController: DemoBaseViewController {
             + [UIColor(red: 51/255, green: 181/255, blue: 229/255, alpha: 1)]
         
         set.valueLinePart1OffsetPercentage = 0.8
-        set.valueLinePart1Length = 0.2
+        set.valueLinePart1Length = 0.05
         set.valueLinePart2Length = 0.4
         //set.xValuePosition = .outsideSlice
         set.yValuePosition = .outsideSlice
