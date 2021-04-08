@@ -143,6 +143,11 @@ class LineChart1ViewController: DemoBaseViewController {
         chartView.data = data
     }
     
+    @objc func chartViewDidEndPanning(_ chartView: ChartViewBase) {
+        print("hello")
+    }
+    
+    
     override func optionTapped(_ option: Option) {
         switch option {
         case .toggleFilled:
@@ -186,4 +191,9 @@ class LineChart1ViewController: DemoBaseViewController {
         
         self.updateChartData()
     }
+    
+    @objc override func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+
+    }
+    
 }

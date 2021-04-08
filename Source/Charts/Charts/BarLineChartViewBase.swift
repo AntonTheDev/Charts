@@ -721,6 +721,8 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
                         // We can stop dragging right now, and let the scroll view take control
                         _outerScrollView = nil
                         _isDragging = false
+                        
+                        delegate?.chartViewDidEndPanning?(self)
                     }
                 }
                 else
@@ -790,9 +792,9 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
                 }
                 
                 _isDragging = false
-                
-                delegate?.chartViewDidEndPanning?(self)
             }
+            
+            delegate?.chartViewDidEndPanning?(self)
             
             if _outerScrollView !== nil
             {
